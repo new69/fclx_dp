@@ -1,6 +1,6 @@
 import User from "../../src/domain/entity/User";
 
-test("Deve criar um usuário", async () => {
+test("should create a user", async () => {
     const user = await User.create("John Doe", "john.doe@gmail.com", "12345678", 30);
     expect(user.name.getValue()).toBe("John Doe");
     expect(user.email.getValue()).toBe("john.doe@gmail.com");
@@ -8,18 +8,18 @@ test("Deve criar um usuário", async () => {
     expect(user.age).toBe(30);
 });
 
-test("Não deve criar um usuário com nome inválido", () => {
+test("should not create a user with invalid name", () => {
     expect(() => User.create("John", "john.doe@gmail.com", "12345678", 30)).rejects.toThrow(new Error("Invalid name"));
 });
 
-test("Não deve criar um usuário com email inválido", () => {
+test("should not create a user with invalid email", () => {
     expect(() => User.create("John Doe", "john.doe@gmail", "12345678", 30)).rejects.toThrow(new Error("Invalid email"));
 });
 
-test("Não deve criar um usuário com password inválido", () => {
+test("should not create a user with invalid password", () => {
     expect(() => User.create("John Doe", "john.doe@gmail.com", "123456", 30)).rejects.toThrow(new Error("Invalid password"));
 });
 
-test("Não deve criar um usuário com idade inválido", () => {
+test("should not create a user with invalid age", () => {
     expect(() => User.create("John Doe", "john.doe@gmail.com", "12345678", 17)).rejects.toThrow(new Error("Invalid age"));
 });

@@ -2,7 +2,7 @@ import Login from "../../src/application/usercase/Login";
 import Signup from "../../src/application/usercase/Signup";
 import UserRepositoryMemory from "../../src/infra/repository/UserRepositoryMemory";
 
-test("Deve fazer o signup", async function () {
+test("should do the signup", async function () {
     const userRepository = new UserRepositoryMemory();
     const signup = new Signup(userRepository);
     const inputSignup = {
