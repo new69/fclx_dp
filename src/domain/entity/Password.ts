@@ -6,7 +6,9 @@ export default class Password {
     }
 
     static create(password: string, salt?: string): Promise<Password> {
-        if (password.length < 8) throw new Error("Invalid password");
+        if (!String(password).match(/(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z])(?=.*[!#@$%^&*(-)+=]).*$/)) {
+            throw new Error("Invalid password")
+        };
         const generatedSalt = salt || randomBytes(20).toString('hex');
         return new Promise((resolve) => {
             pbkdf2(password, generatedSalt, 100, 64, 'sha512', (error, value) => {

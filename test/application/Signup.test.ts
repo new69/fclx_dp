@@ -8,14 +8,14 @@ test("should do the signup", async function () {
     const inputSignup = {
         name: "John Doe",
         email: "john.doe@gmail.com",
-        password: "12345678",
+        password: "Change@123",
         age: 30
     };
     await signup.execute(inputSignup);
     const login = new Login(userRepository);
     const inputLogin = {
         email: "john.doe@gmail.com",
-        password: "12345678",
+        password: "Change@123",
     };
     const output = await login.execute(inputLogin);
     expect(output.name).toBe(inputSignup.name)
