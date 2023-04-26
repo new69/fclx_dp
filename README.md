@@ -1,5 +1,5 @@
 # Clean Architecture and Design Patterns in TypeScript and Jest
-This repository contains a study on how to apply Clean Architecture principles in projects developed in TypeScript, using the Jest framework to write automated tests.zados.
+This repository contains a study on how to apply Clean Architecture principles in projects developed in TypeScript, using the Jest framework to write automated tests.
 
 Steps to use:
 1. Install project dependencies:
