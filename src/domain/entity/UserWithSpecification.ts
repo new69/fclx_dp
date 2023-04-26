@@ -14,7 +14,7 @@
 //         if (!nameSpecification
 //                 .and(emailSpecification)
 //                 .and(passwordSpecification)
-//                 .and(ageSpecification)
+//                 .or(ageSpecification)
 //                 .isSatisfiedBy(this)) {
 //             throw new Error('Invalid parameter');
 //         }
